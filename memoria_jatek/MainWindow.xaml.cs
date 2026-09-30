@@ -16,6 +16,8 @@ namespace memoria_jatek
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<string> palya = new List<string>() { };
+        List<string> tema = new List<string>() { };
         public MainWindow()
         {
             InitializeComponent();
