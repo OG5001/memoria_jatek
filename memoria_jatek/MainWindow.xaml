@@ -18,8 +18,11 @@
             <RowDefinition Height="150"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="MEMÓRIAJÁTÉK" VerticalAlignment="Center" Height="48" Width="546" Margin="254,0,0,0" FontWeight="Bold" FontSize="40" Foreground="#FFCAFF22"/>
-        <ListBox x:Name="palya" Grid.Row="1"  Margin="0,0,472,87"/>
-
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="MEMÓRIAJÁTÉK" VerticalAlignment="Center" Height="48" Width="569" Margin="231,0,0,0" FontWeight="Bold" FontSize="40" Foreground="#FFCAFF22"/>
+        <ListBox x:Name="lbox_palya" Grid.Row="1"  Margin="0,9,472,75" SelectionChanged="Kivalasztas"/>
+        <ListBox x:Name="lbox_tema" Grid.Row="1" Margin="0,80,472,0" SelectionChanged="Kivalasztas2"/>
+        <Button Background="Gold" Content="Játék indítása" HorizontalAlignment="Left" Margin="603,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="54" Width="145" Click="Button_Click"/>
+        <TextBox x:Name="tb" HorizontalAlignment="Left" Margin="344,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="244" Height="106"/>
+        <Grid x:Name="btn_palya" Grid.Row="2"/>
     </Grid>
 </Window>
