@@ -24,5 +24,6 @@
         <Button Background="Gold" Content="Játék indítása" HorizontalAlignment="Left" Margin="603,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="54" Width="145" Click="Button_Click"/>
         <TextBox x:Name="tb" HorizontalAlignment="Left" Margin="344,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="244" Height="106"/>
         <Grid x:Name="btn_palya" Grid.Row="2"/>
+        <TextBlock x:Name="tb_point" HorizontalAlignment="Left" Margin="603,115,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Próbálkozások" VerticalAlignment="Top" Width="145" Height="25"/>
     </Grid>
 </Window>
