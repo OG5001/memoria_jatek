@@ -16,13 +16,14 @@ namespace memoria_jatek
     /// </summary>
     public partial class MainWindow : Window
     {
+        Button gomb1 = null;
         int point = 0;
         string cont = "";
         string cont2 = "";
         int ind = 0;
         List<string> palya = new List<string>() { "2x2", "4x4", "6x6" };
         List<string> tema = new List<string>() { "szamok", "italok" };
-        List<string> drinks = new List<string>() { "MountinDew", "Pepsi", "CocaCola", "Irn-Bru", "Kinley", "7Up", "DrPepper", "Schweppes", "Fanta", "Kofola", "Sprite", "Faygo", "LaCroixSparklingWater", "Shasta", "Kinnie", "Jarritos" };
+        List<string> drinks = new List<string>() { "MountinDew", "Pepsi", "CocaCola", "IrnBru", "Kinley", "7Up", "DrPepper", "Schweppes", "Fanta", "Kofola", "Sprite", "Faygo", "LaCroixSparklingWater", "Shasta", "Kinnie", "Jarritos", "RedBull", "Monster", "Rockstar", "Burn", "Hell", "Tango", "Orangina", "Nestea", "LiptonIceTea", "Arizona", "Perrier", "SanPellegrino", "VitaCoco", "Snapple", "AriZonaGreenTea", "OceanSpray" };
         public MainWindow()
         {
             InitializeComponent();
@@ -271,7 +272,7 @@ namespace memoria_jatek
                 btn_palya.RowDefinitions.Clear();
 
                 btn_palya.ColumnDefinitions.Clear();
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     btn_palya.RowDefinitions.Add(new RowDefinition());
                     btn_palya.ColumnDefinitions.Add(new ColumnDefinition());
@@ -279,9 +280,9 @@ namespace memoria_jatek
                 i2 = i2.Shuffle().ToList();
 
                 int index = 0;
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 4; i++)
                 {
-                    for (int j = 0; j < 2; j++)
+                    for (int j = 0; j < 4; j++)
                     {
                         Button btn = new Button
                         {
@@ -317,7 +318,7 @@ namespace memoria_jatek
                 btn_palya.RowDefinitions.Clear();
 
                 btn_palya.ColumnDefinitions.Clear();
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     btn_palya.RowDefinitions.Add(new RowDefinition());
                     btn_palya.ColumnDefinitions.Add(new ColumnDefinition());
@@ -325,9 +326,9 @@ namespace memoria_jatek
                 i3 = i3.Shuffle().ToList();
 
                 int index = 0;
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 6; i++)
                 {
-                    for (int j = 0; j < 2; j++)
+                    for (int j = 0; j < 6; j++)
                     {
                         Button btn = new Button
                         {
@@ -355,6 +356,7 @@ namespace memoria_jatek
                 btn.Content = btn.Name.Split('_')[1];
                 cont = btn.Name.Split('_')[1];
                 ind++;
+                gomb1 = btn;
             }
             else if (ind == 1)
             {
@@ -379,6 +381,7 @@ namespace memoria_jatek
                     cont = "";
                     cont2 = "";
                     btn.Content = "?";
+                    gomb1.Content = "?";
                     point++;
                     tb_point.Text = "Próbálkozások: " + point;
 
