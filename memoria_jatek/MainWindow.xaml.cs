@@ -16,6 +16,7 @@ namespace memoria_jatek
     /// </summary>
     public partial class MainWindow : Window
     {
+        int prob = 0;
         Button gomb1 = null;
         int point = 0;
         string cont = "";
@@ -368,15 +369,23 @@ namespace memoria_jatek
             {
                 if (cont == cont2)
                 {
+                    MessageBox.Show("Sikeres találat!", "Gratulálok!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    gomb1.Click -= button_cl;
+                    btn.Click -= button_cl;
+                    gomb1.Background = Brushes.LightGreen; 
+                    btn.Background = Brushes.LightGreen;
                     ind = 0;
                     cont = "";
                     cont2 = "";
                     point++;
                     tb_point.Text = "Próbálkozások: " + point;
+                    prob++;
+
 
                 }
                 else
                 {
+                    MessageBox.Show("Sikertelen találat!", "Próbálkozz tovább!", MessageBoxButton.OK, MessageBoxImage.Information);
                     ind = 0;
                     cont = "";
                     cont2 = "";
@@ -385,7 +394,31 @@ namespace memoria_jatek
                     point++;
                     tb_point.Text = "Próbálkozások: " + point;
 
+
                 }
+            }
+            if(prob == btn_palya.Children.Count / 2)
+            {
+                MessageBox.Show($"Gratulálok, Nyertél {point} próbálkozásból!", "Játék vége", MessageBoxButton.OK, MessageBoxImage.Information);
+                point = 0;
+                prob = 0;
+                ind = 0;
+                cont = "";
+                cont2 = "";
+                gomb1 = null;
+
+                // 2. Kijelzők és feliratok alaphelyzetbe állítása
+                tb_point.Text = "Próbálkozások: 0";
+                tb.Text = ""; // Kiválasztott pálya/téma szöveg törlése
+
+                // 3. ListBoxok kijelölésének megszüntetése
+                lbox_palya.SelectedItem = null;
+                lbox_tema.SelectedItem = null;
+
+                // 4. A pálya (Grid) teljes kiürítése
+                btn_palya.Children.Clear();
+                btn_palya.RowDefinitions.Clear();
+                btn_palya.ColumnDefinitions.Clear();
             }
 
         }
