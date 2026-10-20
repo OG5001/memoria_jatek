@@ -23,8 +23,9 @@ namespace memoria_jatek
         string cont2 = "";
         int ind = 0;
         List<string> palya = new List<string>() { "2x2", "4x4", "6x6" };
-        List<string> tema = new List<string>() { "szamok", "italok" };
+        List<string> tema = new List<string>() { "szamok", "italok", "csokik" };
         List<string> drinks = new List<string>() { "MountinDew", "Pepsi", "CocaCola", "IrnBru", "Kinley", "7Up", "DrPepper", "Schweppes", "Fanta", "Kofola", "Sprite", "Faygo", "LaCroixSparklingWater", "Shasta", "Kinnie", "Jarritos", "RedBull", "Monster", "Rockstar", "Burn", "Hell", "Tango", "Orangina", "Nestea", "LiptonIceTea", "Arizona", "Perrier", "SanPellegrino", "VitaCoco", "Snapple", "AriZonaGreenTea", "OceanSpray" };
+        List<string> csokik = new List<string>() { "Boci", "Sport_szelet", "Milka", "Kinder", "Tibi", "Snickers", "Szerencsi", "Mars", "Szamos", "Twix", "Stühmer", "Bounty", "ChocoMe", "KitKat", "Vadász", "Heidi", "Hershey_s", "Cadbury", "Toblerone", "Ritter_Sport", "Schogetten", "Choceur", "Fin_Carré", "Lindt", "Ferrero_Rocher", "Merci", "Guylian", "Geisha", "Godiva", "Valrhona", "Galler", "Neuhaus" };
         public MainWindow()
         {
             InitializeComponent();
@@ -347,6 +348,145 @@ namespace memoria_jatek
 
                 }
             }
+            else if (lbox_palya.SelectedItem == "2x2" && lbox_tema.SelectedItem == "csokik")
+            {
+
+                List<string> i1 = new List<string>();
+                for (int i = 0; i < 2 * 2 / 2; i++)
+
+                {
+
+                    i1.Add(csokik[i].ToString());
+
+                    i1.Add(csokik[i].ToString());
+
+                }
+                point = 0;
+                tb_point.Text = "Próbálkozások: " + point;
+                btn_palya.RowDefinitions.Clear();
+
+                btn_palya.ColumnDefinitions.Clear();
+                for (int i = 0; i < 2; i++)
+                {
+                    btn_palya.RowDefinitions.Add(new RowDefinition());
+                    btn_palya.ColumnDefinitions.Add(new ColumnDefinition());
+                }
+                i1 = i1.Shuffle().ToList();
+
+                int index = 0;
+                for (int i = 0; i < 2; i++)
+                {
+                    for (int j = 0; j < 2; j++)
+                    {
+                        Button btn = new Button
+                        {
+                            Name = "b_" + i1[index++].ToString(),
+                            Content = "?",
+                            FontSize = 20,
+                            FontWeight = FontWeights.Bold,
+                            Margin = new Thickness(3)
+                        };
+                        btn.Click += button_cl;
+                        Grid.SetRow(btn, i);
+                        Grid.SetColumn(btn, j);
+                        btn_palya.Children.Add(btn);
+                    }
+
+                }
+            }
+
+            else if (lbox_palya.SelectedItem == "4x4" && lbox_tema.SelectedItem == "csokik")
+            {
+
+                List<string> i2 = new List<string>();
+                for (int i = 0; i < 4 * 4 / 2; i++)
+
+                {
+
+                    i2.Add(csokik[i].ToString());
+
+                    i2.Add(csokik[i].ToString());
+
+                }
+                point = 0;
+                tb_point.Text = "Próbálkozások: " + point;
+                btn_palya.RowDefinitions.Clear();
+
+                btn_palya.ColumnDefinitions.Clear();
+                for (int i = 0; i < 4; i++)
+                {
+                    btn_palya.RowDefinitions.Add(new RowDefinition());
+                    btn_palya.ColumnDefinitions.Add(new ColumnDefinition());
+                }
+                i2 = i2.Shuffle().ToList();
+
+                int index = 0;
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        Button btn = new Button
+                        {
+                            Name = "b_" + i2[index++].ToString(),
+                            Content = "?",
+                            FontSize = 20,
+                            FontWeight = FontWeights.Bold,
+                            Margin = new Thickness(3)
+                        };
+                        btn.Click += button_cl;
+                        Grid.SetRow(btn, i);
+                        Grid.SetColumn(btn, j);
+                        btn_palya.Children.Add(btn);
+                    }
+
+                }
+            }
+            else if (lbox_palya.SelectedItem == "6x6" && lbox_tema.SelectedItem == "csokik")
+            {
+
+                List<string> i3 = new List<string>();
+                for (int i = 0; i < 6 * 6 / 2; i++)
+
+                {
+
+                    i3.Add(csokik[i].ToString());
+
+                    i3.Add(csokik[i].ToString());
+
+                }
+                point = 0;
+                tb_point.Text = "Próbálkozások: " + point;
+                btn_palya.RowDefinitions.Clear();
+
+                btn_palya.ColumnDefinitions.Clear();
+                for (int i = 0; i < 6; i++)
+                {
+                    btn_palya.RowDefinitions.Add(new RowDefinition());
+                    btn_palya.ColumnDefinitions.Add(new ColumnDefinition());
+                }
+                i3 = i3.Shuffle().ToList();
+
+                int index = 0;
+                for (int i = 0; i < 6; i++)
+                {
+                    for (int j = 0; j < 6; j++)
+                    {
+                        Button btn = new Button
+                        {
+                            Name = "b_" + i3[index++].ToString(),
+                            Content = "?",
+                            FontSize = 20,
+                            FontWeight = FontWeights.Bold,
+                            Margin = new Thickness(3)
+                        };
+                        btn.Click += button_cl;
+                        Grid.SetRow(btn, i);
+                        Grid.SetColumn(btn, j);
+                        btn_palya.Children.Add(btn);
+                    }
+
+                }
+            }
 
         }
         private void button_cl(object sender, RoutedEventArgs e)
@@ -406,16 +546,10 @@ namespace memoria_jatek
                 cont = "";
                 cont2 = "";
                 gomb1 = null;
-
-                // 2. Kijelzők és feliratok alaphelyzetbe állítása
                 tb_point.Text = "Próbálkozások: 0";
-                tb.Text = ""; // Kiválasztott pálya/téma szöveg törlése
-
-                // 3. ListBoxok kijelölésének megszüntetése
+                tb.Text = ""; 
                 lbox_palya.SelectedItem = null;
                 lbox_tema.SelectedItem = null;
-
-                // 4. A pálya (Grid) teljes kiürítése
                 btn_palya.Children.Clear();
                 btn_palya.RowDefinitions.Clear();
                 btn_palya.ColumnDefinitions.Clear();
